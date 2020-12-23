@@ -17,7 +17,7 @@ public class CsvAdapterUtilsTest extends TestCase {
     }
 
     public void testCsvToArrayList() throws IOException {
-        List<testObject> objects = (List<testObject>) CsvAdapterUtils.csvToArrayList(csvPayload, testObject.class);
+        List<TestObject> objects = (List<TestObject>) CsvAdapterUtils.csvToArrayList(csvPayload, TestObject.class);
         Assert.assertEquals(2, objects.size());
         Assert.assertEquals("Doe", objects.get(0).getName());
         Assert.assertEquals(32, objects.get(0).getAge());
@@ -27,11 +27,11 @@ public class CsvAdapterUtilsTest extends TestCase {
 
     public void testCsvToJson() throws IOException {
         JSONArray expectedArray = new JSONArray("[{\"name\":\"Doe\",\"age\":32},{\"name\":\"John\",\"age\":35}]");
-        JSONArray objects = CsvAdapterUtils.csvToJson(csvPayload, testObject.class);
+        JSONArray objects = CsvAdapterUtils.csvToJson(csvPayload, TestObject.class);
         Assert.assertEquals(expectedArray.toString(), objects.toString());
     }
 
-    public static class testObject {
+    public static class TestObject {
         private String name;
         private int age;
 

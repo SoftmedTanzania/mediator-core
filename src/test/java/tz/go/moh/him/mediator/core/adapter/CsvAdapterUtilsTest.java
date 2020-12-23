@@ -1,4 +1,4 @@
-package com.softmed.mediator.adapter;
+package tz.go.moh.him.mediator.core.adapter;
 
 import junit.framework.TestCase;
 import org.json.JSONArray;

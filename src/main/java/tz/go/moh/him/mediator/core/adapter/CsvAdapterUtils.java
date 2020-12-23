@@ -1,4 +1,4 @@
-package com.softmed.mediator.adapter;
+package tz.go.moh.him.mediator.core.adapter;
 
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;

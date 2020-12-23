@@ -17,7 +17,7 @@ public class CsvAdapterUtils {
      * @param type  pojo class type
      * @return arraylist of POJO
      */
-    private static List<?> csvToArrayList(String value, Class<?> type) throws IOException {
+    public static List<?> csvToArrayList(String value, Class<?> type) throws IOException {
         MappingIterator<?> csvDataLines = readCsv(value, type);
         return csvDataLines.readAll();
     }

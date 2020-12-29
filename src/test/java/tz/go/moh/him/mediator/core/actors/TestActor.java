@@ -12,10 +12,6 @@ import akka.actor.UntypedActor;
  * Test actor class used for tests
  */
 public class TestActor extends UntypedActor {
-
-    public TestActor() {
-    }
-
     @Override
     public void onReceive(Object msg) throws Exception {
         //Empty body because it is not required for the test.

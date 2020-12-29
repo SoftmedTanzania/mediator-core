@@ -5,6 +5,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.testkit.JavaTestKit;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openhim.mediator.engine.messages.AddOrchestrationToCoreResponse;
@@ -15,7 +16,6 @@ import scala.concurrent.duration.Duration;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertEquals;
 
 public class ActorUtilsTest {
     private static ActorSystem system;
@@ -45,16 +45,16 @@ public class ActorUtilsTest {
 
 
             AddOrchestrationToCoreResponse result = expectMsgClass(Duration.create(60, TimeUnit.SECONDS), AddOrchestrationToCoreResponse.class);
-            assertEquals(orchestrationName, result.getOrchestration().getName());
-            assertEquals(request.getBody(), result.getOrchestration().getRequest().getBody());
-            assertEquals(request.getHeaders(), result.getOrchestration().getRequest().getHeaders());
-            assertEquals(request.getHost(), result.getOrchestration().getRequest().getHost());
-            assertEquals(request.getMethod(), result.getOrchestration().getRequest().getMethod());
-            assertEquals(request.getPath(), result.getOrchestration().getRequest().getPath());
+            Assert.assertEquals((orchestrationName, result.getOrchestration().getName());
+            Assert.assertEquals(request.getBody(), result.getOrchestration().getRequest().getBody());
+            Assert.assertEquals(request.getHeaders(), result.getOrchestration().getRequest().getHeaders());
+            Assert.assertEquals(request.getHost(), result.getOrchestration().getRequest().getHost());
+            Assert.assertEquals(request.getMethod(), result.getOrchestration().getRequest().getMethod());
+            Assert.assertEquals(request.getPath(), result.getOrchestration().getRequest().getPath());
 
-            assertEquals(response.getBody(), result.getOrchestration().getResponse().getBody());
-            assertEquals(response.getStatusCode(), result.getOrchestration().getResponse().getStatus());
-            assertEquals(response.getHeaders(), result.getOrchestration().getResponse().getHeaders());
+            Assert.assertEquals(response.getBody(), result.getOrchestration().getResponse().getBody());
+            Assert.assertEquals(response.getStatusCode(), result.getOrchestration().getResponse().getStatus());
+            Assert.assertEquals(response.getHeaders(), result.getOrchestration().getResponse().getHeaders());
         }};
     }
 

@@ -1,4 +1,4 @@
-package tz.go.moh.him.mediator.core.mediatorUtils;
+package tz.go.moh.him.mediator.core.actors;
 
 import akka.actor.ActorRef;
 import org.openhim.mediator.engine.CoreResponse;

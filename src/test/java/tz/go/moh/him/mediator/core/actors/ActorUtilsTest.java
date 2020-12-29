@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ActorUtilsTest {
     private static ActorSystem system;
+    private final String orchestrationName = "unit-test-orchestration";
 
 
     @BeforeClass
@@ -34,9 +35,10 @@ public class ActorUtilsTest {
 
     @Test
     public void addOrchestrationResponse() {
+        Assert.assertNotNull(orchestrationName);
+
         new JavaTestKit(system) {{
             ActorRef actor = system.actorOf(Props.create(TestActor.class));
-            String orchestrationName = "unit-test-orchestration";
 
 
             MediatorHTTPRequest request = buildTestRequest(actor);

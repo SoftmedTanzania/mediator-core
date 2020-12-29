@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
 public class ActorUtilsTest {
-    static ActorSystem system;
+    private static ActorSystem system;
 
 
     @BeforeClass

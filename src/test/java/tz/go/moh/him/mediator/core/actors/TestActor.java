@@ -7,30 +7,17 @@
 package tz.go.moh.him.mediator.core.actors;
 
 import akka.actor.UntypedActor;
-import org.openhim.mediator.engine.MediatorConfig;
 
 /**
- * Parses XDS.b Provide and Register Document Set transactions.
- * <br/><br/>
- * Messages supported:
- * <ul>
- *     <li>SimpleMediatorRequest<String> - responds with SimpleMediatorResponse<ProvideAndRegisterDocumentSetRequestType></li>
- * </ul>
+ * Test actor class used for tests
  */
 public class TestActor extends UntypedActor {
-
-    private MediatorConfig config;
 
     public TestActor() {
     }
 
-    public TestActor(MediatorConfig config) {
-        this.config = config;
-    }
-
-
     @Override
     public void onReceive(Object msg) throws Exception {
-
+        //Empty body because it is not required for the test.
     }
 }

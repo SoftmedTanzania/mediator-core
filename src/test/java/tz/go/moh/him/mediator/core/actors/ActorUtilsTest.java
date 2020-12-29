@@ -45,7 +45,7 @@ public class ActorUtilsTest {
 
 
             AddOrchestrationToCoreResponse result = expectMsgClass(Duration.create(60, TimeUnit.SECONDS), AddOrchestrationToCoreResponse.class);
-            Assert.assertEquals((orchestrationName, result.getOrchestration().getName());
+            Assert.assertEquals(orchestrationName, result.getOrchestration().getName());
             Assert.assertEquals(request.getBody(), result.getOrchestration().getRequest().getBody());
             Assert.assertEquals(request.getHeaders(), result.getOrchestration().getRequest().getHeaders());
             Assert.assertEquals(request.getHost(), result.getOrchestration().getRequest().getHost());

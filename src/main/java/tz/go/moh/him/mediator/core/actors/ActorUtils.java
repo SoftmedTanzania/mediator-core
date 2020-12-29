@@ -9,7 +9,7 @@ import org.openhim.mediator.engine.messages.MediatorHTTPResponse;
 public class ActorUtils {
 
 
-    public static void addOrchestrationResponse(String orchestrationName, MediatorHTTPRequest request, MediatorHTTPResponse response, ActorRef requestHandler, ActorRef currentCallingActor) {
+    public static void addOrchestrationResponse(String orchestrationName, MediatorHTTPRequest request, MediatorHTTPResponse response, ActorRef requestHandler, ActorRef senderActor) {
         CoreResponse.Orchestration orchestration = new CoreResponse.Orchestration();
         orchestration.setName(orchestrationName);
 
@@ -24,7 +24,7 @@ public class ActorUtils {
             coreResponse = convertMediatorHTTPResponseToCoreResponse(response);
 
         orchestration.setResponse(coreResponse);
-        requestHandler.tell(new AddOrchestrationToCoreResponse(orchestration), currentCallingActor);
+        requestHandler.tell(new AddOrchestrationToCoreResponse(orchestration), senderActor);
     }
 
     public static CoreResponse.Request convertMediatorHTTPRequestToCoreRequest(MediatorHTTPRequest request) {

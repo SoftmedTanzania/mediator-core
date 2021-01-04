@@ -6,4 +6,3 @@ Core library used by Tanzania [OpenHIM](http://openhim.org/) mediators.
 
 # Getting Started
 Clone the repository and run `npm install`
-

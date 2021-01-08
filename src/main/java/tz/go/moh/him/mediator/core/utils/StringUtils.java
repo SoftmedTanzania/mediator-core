@@ -9,7 +9,7 @@ public class StringUtils {
      * @param exception exception with stack trace
      * @return string with the stacktrace message
      */
-    protected static String writeStackTraceToString(Exception exception) {
+    public static String writeStackTraceToString(Exception exception) {
         StringWriter stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
         exception.printStackTrace(printWriter);

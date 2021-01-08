@@ -15,26 +15,18 @@ public class DateValidatorUtils {
      * @return validation status
      */
     public static boolean isThisDateBeforeFieldRange(String dateToValidate,
-                                                     String dateFormat, int field, int amount) {
+                                                     String dateFormat, int field, int amount) throws ParseException {
 
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
         sdf.setLenient(false);
-        try {
+        // if not valid, it will throw ParseException
+        Date date = sdf.parse(dateToValidate);
 
-            // if not valid, it will throw ParseException
-            Date date = sdf.parse(dateToValidate);
+        // start date before the given date
+        Calendar startDate = Calendar.getInstance();
+        startDate.add(field, amount);
 
-            // start date before the given date
-            Calendar startDate = Calendar.getInstance();
-            startDate.add(field, amount);
-
-            return date.before(startDate.getTime());
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return false;
-        }
-
+        return date.before(startDate.getTime());
     }
 
 
@@ -46,23 +38,18 @@ public class DateValidatorUtils {
      * @return validation status
      */
     public static boolean isThisDateAfterFieldRange(String dateToValidate,
-                                             String dateFormat, int field, int amount) {
+                                                    String dateFormat, int field, int amount) throws ParseException {
 
         SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
         sdf.setLenient(false);
-        try {
-            // if not valid, it will throw ParseException
-            Date date = sdf.parse(dateToValidate);
 
-            Calendar startDate = Calendar.getInstance();
-            startDate.add(field, amount);
+        // if not valid, it will throw ParseException
+        Date date = sdf.parse(dateToValidate);
 
-            return date.after(startDate.getTime());
+        Calendar startDate = Calendar.getInstance();
+        startDate.add(field, amount);
 
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return false;
-        }
+        return date.after(startDate.getTime());
 
     }
 
@@ -73,8 +60,8 @@ public class DateValidatorUtils {
      * @return true if it is a valid future date false otherwise
      */
     public static boolean isValidFutureDate(String dateToValidate,
-                                          String dateFormat){
-        return isThisDateAfterFieldRange(dateToValidate,dateFormat,Calendar.SECOND,0);
+                                            String dateFormat) throws ParseException {
+        return isThisDateAfterFieldRange(dateToValidate, dateFormat, Calendar.SECOND, 0);
     }
 
     /**
@@ -83,7 +70,7 @@ public class DateValidatorUtils {
      * @return true if it is a valid past date false otherwise
      */
     public static boolean isValidPastDate(String dateToValidate,
-                                          String dateFormat){
-        return isThisDateBeforeFieldRange(dateToValidate,dateFormat,Calendar.SECOND,0);
+                                          String dateFormat) throws ParseException {
+        return isThisDateBeforeFieldRange(dateToValidate, dateFormat, Calendar.SECOND, 0);
     }
 }

@@ -14,7 +14,7 @@ public class ErrorMessageTest {
         resultDetail.setMessage("Record with id %s failed validation, Id must not exceed 255 characters in length");
         resultDetail.setStackTrace("sample stack trace");
 
-        Assert.assertEquals("error", resultDetail.getType());
+        Assert.assertEquals(ResultDetail.ResultsDetailsType.ERROR, resultDetail.getType());
         Assert.assertEquals("Record with id %s failed validation, Id must not exceed 255 characters in length", resultDetail.getMessage());
         Assert.assertEquals("sample stack trace", resultDetail.getStackTrace());
 
@@ -30,7 +30,7 @@ public class ErrorMessageTest {
     @Test
     public void testErrorMessageConstructors() {
         ResultDetail detail = new ResultDetail(ResultDetail.ResultsDetailsType.ERROR, "Record with id 2 failed validation", "Sample stack trace");
-        Assert.assertEquals("ERROR 2", detail.getType());
+        Assert.assertEquals(ResultDetail.ResultsDetailsType.ERROR, detail.getType());
         Assert.assertEquals("Record with id 2 failed validation", detail.getMessage());
         Assert.assertEquals("Sample stack trace", detail.getStackTrace());
 

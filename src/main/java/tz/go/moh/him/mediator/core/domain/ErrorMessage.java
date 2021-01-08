@@ -13,6 +13,14 @@ public class ErrorMessage {
      */
     private List<ResultDetail> resultsDetails;
 
+    public ErrorMessage() {
+    }
+
+    public ErrorMessage(String source, List<ResultDetail> resultsDetails) {
+        this.source = source;
+        this.resultsDetails = resultsDetails;
+    }
+
     public String getSource() {
         return source;
     }

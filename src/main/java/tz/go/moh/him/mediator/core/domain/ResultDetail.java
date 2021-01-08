@@ -19,6 +19,15 @@ public class ResultDetail {
      */
     private String stackTrace;
 
+    public ResultDetail() {
+    }
+
+    public ResultDetail(String type, String message, String stackTrace) {
+        this.type = type;
+        this.message = message;
+        this.stackTrace = stackTrace;
+    }
+
     public String getType() {
         return type;
     }

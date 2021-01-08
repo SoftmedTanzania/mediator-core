@@ -18,6 +18,8 @@
         <powermock.version>2.0.5</powermock.version>
         <nexus-staging-maven-plugin.version>1.5.1</nexus-staging-maven-plugin.version>
     </properties>
+
+
     <distributionManagement>
         <snapshotRepository>
             <id>nexus-snapshots</id>
@@ -30,12 +32,14 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
     </distributionManagement>
+
     <scm>
         <connection>scm:git:git@github.com:SoftmedTanzania/mediator-core.git</connection>
         <developerConnection>scm:git:git@github.com:SoftmedTanzania/mediator-core.git
         </developerConnection>
         <url>https://github.com/SoftmedTanzania/mediator-core</url>
     </scm>
+
     <repositories>
         <repository>
             <id>snapshots-repo</id>
@@ -48,6 +52,7 @@
             </snapshots>
         </repository>
     </repositories>
+
     <developers>
         <developer>
             <email>dnchembi_at_softmed_dot_co_dot_tz</email>
@@ -70,6 +75,7 @@
             <organization>Hamilton Health Sciences</organization>
         </developer>
     </developers>
+
     <build>
         <plugins>
             <plugin>
@@ -77,8 +83,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.2</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -186,6 +192,7 @@
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>org.openhim</groupId>

@@ -5,14 +5,12 @@ public class ResultDetail {
      * Type of result, in this case its going to mostly be "Error"
      * This is always required
      */
-    private String type;
-
+    private ResultsDetailsType type;
     /**
      * Error message
      * This is always required
      */
     private String message;
-
     /**
      * Stack trace to assist in debugging incase of critical failure
      * This field is optional and can be null in case there are no stack traces involved
@@ -22,17 +20,17 @@ public class ResultDetail {
     public ResultDetail() {
     }
 
-    public ResultDetail(String type, String message, String stackTrace) {
+    public ResultDetail(ResultsDetailsType type, String message, String stackTrace) {
         this.type = type;
         this.message = message;
         this.stackTrace = stackTrace;
     }
 
-    public String getType() {
+    public ResultsDetailsType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(ResultsDetailsType type) {
         this.type = type;
     }
 
@@ -50,5 +48,12 @@ public class ResultDetail {
 
     public void setStackTrace(String stackTrace) {
         this.stackTrace = stackTrace;
+    }
+
+    /**
+     * Results Details Type
+     */
+    public enum ResultsDetailsType {
+        ERROR
     }
 }

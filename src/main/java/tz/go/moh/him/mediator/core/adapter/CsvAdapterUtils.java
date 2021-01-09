@@ -16,6 +16,7 @@ public class CsvAdapterUtils {
      * @param value csv string payload
      * @param type  pojo class type
      * @return arraylist of POJO
+     * @throws IOException if an I/O exception occurs
      */
     public static List<?> csvToArrayList(String value, Class<?> type) throws IOException {
         MappingIterator<?> csvDataLines = readCsv(value, type);
@@ -29,6 +30,7 @@ public class CsvAdapterUtils {
      * @param value csv string payload
      * @param type  pojo class type
      * @return jsonArray
+     * @throws IOException if an I/O exception occurs
      */
     public static JSONArray csvToJson(String value, Class<?> type) throws IOException {
         MappingIterator<?> csvDataLines = readCsv(value, type);
@@ -36,6 +38,14 @@ public class CsvAdapterUtils {
     }
 
 
+    /**
+     * Reads the CSV.
+     *
+     * @param value The value.
+     * @param type  The type.
+     * @return Returns a mapping iterator.
+     * @throws IOException if an I/O exception occurs
+     */
     private static MappingIterator<?> readCsv(String value, Class<?> type) throws IOException {
         CsvSchema orderLineSchema = CsvSchema.emptySchema().withHeader();
         CsvMapper csvMapper = new CsvMapper();

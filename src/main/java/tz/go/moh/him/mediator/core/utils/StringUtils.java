@@ -6,6 +6,7 @@ import java.io.StringWriter;
 public class StringUtils {
     /**
      * A method to write stack trace to a string resource
+     *
      * @param exception exception with stack trace
      * @return string with the stacktrace message
      */

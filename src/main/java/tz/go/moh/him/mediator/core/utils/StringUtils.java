@@ -4,6 +4,16 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 
 public class StringUtils {
+
+    /**
+     * Checks if a string is null or empty.
+     * @param value The string value.
+     * @return Returns true if the string is null or empty.
+     */
+    public static boolean isNullOrEmpty(String value) {
+        return value == null || value.trim().length() == 0;
+    }
+
     /**
      * A method to write stack trace to a string resource
      *

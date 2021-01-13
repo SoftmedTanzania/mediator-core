@@ -9,6 +9,9 @@ import org.json.JSONArray;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Represents a CSV adapter utilty.
+ */
 public class CsvAdapterUtils {
     /**
      * Read CSV string data and return an array of POJO

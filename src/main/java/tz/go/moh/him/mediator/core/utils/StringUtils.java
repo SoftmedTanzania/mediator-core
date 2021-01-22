@@ -3,6 +3,9 @@ package tz.go.moh.him.mediator.core.utils;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+/**
+ * Represents a string validation utility.
+ */
 public class StringUtils {
 
     /**

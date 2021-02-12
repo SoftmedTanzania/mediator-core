@@ -10,6 +10,7 @@ public class StringUtils {
 
     /**
      * Checks if a string is null or empty.
+     *
      * @param value The string value.
      * @return Returns true if the string is null or empty.
      */

@@ -1,5 +1,7 @@
 package tz.go.moh.him.mediator.core.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Represents a result detail.
  */
@@ -8,18 +10,21 @@ public class ResultDetail {
      * Type of result, in this case its going to mostly be "Error"
      * This is always required
      */
+    @JsonProperty("type")
     private ResultsDetailsType type;
 
     /**
      * Error message
      * This is always required
      */
+    @JsonProperty("message")
     private String message;
 
     /**
      * Stack trace to assist in debugging incase of critical failure
      * This field is optional and can be null in case there are no stack traces involved
      */
+    @JsonProperty("stackTrace")
     private String stackTrace;
 
     /**
